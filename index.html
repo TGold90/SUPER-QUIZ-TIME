@@ -10,21 +10,24 @@
 <body>
     <!--Static header should show always-->
 <header>
-    <h1>Super Quiz Time!</h1>
     <!--timer and highscores will also always be visible-->
-    <div id="timer"></div>
-    <div id="high scores"></div>
+    <div id="timer" value="TIMER">TIMER</div>
+    <button id="high scores">HIGH SCORES</button>
 </header>
+    <h2 id="SQT">SUPER QUIZ TIME</h2>
     <!--box with start button and brief explanation-->
     <div id="quizbox">
-        <h2></h2>
-        <button id="startbtn"></button>
-        <form id="questions">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-        </form>
+        <button id="startbtn">START</button>
+        <div class="questions">
+            <div id="buttons" class="buttonbox">
+                <ul id="answerList">
+                  <li><button class="answerbtn">OPTION 1</button></li>  
+                  <li><button class="answerbtn">OPTION 2</button></li>  
+                  <li><button class="answerbtn">OPTION 3</button></li>  
+                  <li><button class="answerbtn">OPTION 4</button></li>  
+                </ul>
+            </div>
+        </div>
     </div>
     
     <script src="script.js"></script>

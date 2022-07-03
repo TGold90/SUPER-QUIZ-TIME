@@ -10,3 +10,14 @@
 var timer = document.querySelector("#timer");
 var quizBox = document.querySelector("#quizBox");
 var startBtn = document.querySelector("#startbtn");
+var answerSelect = document.querySelector("answerbtn")
+
+startBtn.addEventListener("click", function(event) {
+ timer.event.setInterval(() => {
+     
+ }, interval);
+}
+
+answerSelect.addEventListener("click", function() {
+
+}
