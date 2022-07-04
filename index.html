@@ -8,10 +8,8 @@
     <title>SUPER QUIZ TIME - Bootcamp Quiz</title>
 </head>
 <body>
-    <!--Static header should show always-->
 <header>
-    <!--timer and highscores will also always be visible-->
-    <div id="timer" value="TIMER">TIMER</div>
+    <div id="timer" value="TIMER"></div>
     <button id="high scores">HIGH SCORES</button>
 </header>
     <h2 id="SQT">SUPER QUIZ TIME</h2>
@@ -20,12 +18,15 @@
         <button id="startbtn">START</button>
         <div class="questions">
             <div id="buttons" class="buttonbox">
+                <p id="questioncontent"></p>
+                <div id="answeroptions">
                 <ul id="answerList">
-                  <li><button class="answerbtn">OPTION 1</button></li>  
-                  <li><button class="answerbtn">OPTION 2</button></li>  
-                  <li><button class="answerbtn">OPTION 3</button></li>  
-                  <li><button class="answerbtn">OPTION 4</button></li>  
+                  <li><button id="answer1" class="answerbtn"></button></li>  
+                  <li><button id="answer2" class="answerbtn"></button></li>  
+                  <li><button id="answer3" class="answerbtn"></button></li>  
+                  <li><button id="answer4" class="answerbtn"></button></li>  
                 </ul>
+                </div>
             </div>
         </div>
     </div>
