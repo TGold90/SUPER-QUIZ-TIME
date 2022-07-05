@@ -12,10 +12,15 @@
 var startBtn = document.querySelector("#startbtn");
 var timer = document.querySelector("#timer");
 var quizBox = document.querySelector("#quizBox");
-var answerSelect = document.querySelector(".answerbtn")
+var answerSelect = document.querySelector(".answerbtn");
+var gameOver = document.querySelector("#gameover");
 // var resetBtn = document.querySelector()
 
 var timeLeft = 60;
+
+//function that will run when time runs out or all questions are answered
+// function endOfQuiz () {
+// } 
 
 startBtn.addEventListener("click", function(event) { //starts timer and then timer button should be hidden
 startBtn.style.display = "none";
@@ -53,7 +58,9 @@ var questionOne = function() {
           } else if (event.target.id==="answer1" || event.target.id==="answer3" || event.target.id==="answer4") {
             timeLeft--;
             document.getElementById("timer").innerHTML = 'Timer:' + timeLeft + '-1 second!'
-          } 
+          } else if (timeLeft === 0){
+              document.getElementById("gameover")
+          }
 })      
 }
 
