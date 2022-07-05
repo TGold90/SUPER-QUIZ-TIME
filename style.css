@@ -30,7 +30,12 @@ li {
     margin: 5px;
 }
 
+#timer {
+    font-size: 2em;
+}
+
 #SQT {
+    font-size: 2em;
     text-align: center;
 }
 
@@ -59,6 +64,10 @@ li {
 
 .questions {
     flex-direction: column;
+}
+
+#startbtn {
+    margin: 5px;
 }
 
 .answerBtn {

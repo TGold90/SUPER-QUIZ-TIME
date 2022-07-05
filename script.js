@@ -12,7 +12,7 @@
 var startBtn = document.querySelector("#startbtn");
 var timer = document.querySelector("#timer");
 var quizBox = document.querySelector("#quizBox");
-var answerSelect = document.querySelector("answerbtn")
+var answerSelect = document.querySelector(".answerbtn")
 // var resetBtn = document.querySelector()
 
 var timeLeft = 60;
@@ -25,7 +25,7 @@ startBtn.style.display = "none";
         timeLeft--
  }  else {
     timeLeft === 0;
-    timer.textContent = 'Timer: ' + timeLeft;
+    timer.textContent = 'Timer:' + timeLeft;
     clearInterval(startBtn);
   }    
  }, 1000);
@@ -33,20 +33,49 @@ startBtn.style.display = "none";
  questionOne();
 })
 
+//timer function invokes first question
 var questionOne = function() {
     var firstQuestion = "What does HTML stand for?";
-    var firstAnswerA = "Hyper Tube Markup Language";
-    var firstAnswerB = "Hyper Text Markup Language";
-    var firstAnswerC = "Hypno-Tron Meerkat Lounge";
-    var firstAnswerD = "Hold That Milk Log";
+    var firstAnswerA = false;
+    var firstAnswerB = true;
+    var firstAnswerC = false;
+    var firstAnswerD = false;
 
     document.getElementById("questioncontent").innerHTML = firstQuestion;
-    document.getElementById("answer1").innerHTML = firstAnswerA;
-    document.getElementById("answer2").innerHTML = firstAnswerB;
-    document.getElementById("answer3").innerHTML = firstAnswerC;
-    document.getElementById("answer4").innerHTML = firstAnswerD;
+    document.getElementById("answer1").innerHTML = "Hyper Tube Markup Language";
+    document.getElementById("answer2").innerHTML = "Hyper Text Markup Language";
+    document.getElementById("answer3").innerHTML = "Hypno-Tron Meerkat Lounge";
+    document.getElementById("answer4").innerHTML = "Hold That Milk Log";
+
+    answerSelect.addEventListener("click", function(event) {
+        if (event.target.id==="answer2") {
+             questionTwo();
+          } else if (event.target.id==="answer1" || event.target.id==="answer3" || event.target.id==="answer4") {
+            timeLeft--;
+            document.getElementById("timer").innerHTML = 'Timer:' + timeLeft + '-1 second!'
+          } 
+})      
 }
 
-// answerSelect.addEventListener("click", function() {
+var questionTwo = function() {
+    var secondQuestion = "test";
+    var secondAnswerA = false;
+    var secondAnswerB = false;
+    var secondAnswerC = true;
+    var secondAnswerD = false;
+    
 
-// })
+    document.getElementById("questioncontent").innerHTML = firstQuestion;
+    document.getElementById("answer1").innerHTML = "test";
+    document.getElementById("answer2").innerHTML = "test";
+    document.getElementById("answer3").innerHTML = "test";
+    document.getElementById("answer4").innerHTML = "test";
+
+    answerSelect.addEventListener("click", function() {
+        if (true) {
+            questionThree();
+        } else {
+            timeLeft--
+        }
+})
+}
