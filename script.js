@@ -53,14 +53,21 @@ var questionOne = function() {
     document.getElementById("answer4").innerHTML = "Hold That Milk Log";
 
     answerSelect.addEventListener("click", function(event) {
-        if (event.target.id==="answer2") {
-             questionTwo();
-          } else if (event.target.id==="answer1" || event.target.id==="answer3" || event.target.id==="answer4") {
-            timeLeft--;
-            document.getElementById("timer").innerHTML = 'Timer:' + timeLeft + '-1 second!'
-          } else if (timeLeft === 0){
-              document.getElementById("gameover")
-          }
+        if (answerSelect = true) {
+            questionTwo();
+        } else if (answerSelect = false) {
+            timeLeft--
+            console.log(timeLeft);
+        }
+        // if (event.target.id==="answer1" || event.target.id==="answer3" || event.target.id==="answer4") {
+        //     timeLeft--;
+        //     document.getElementById("decrement").innerHTML = '-1 second!'; //need to add functinoality to make the message disappear
+        //     console.log(timeLeft);
+        // }  else if (timeLeft === 0){
+        // } else if (event.target.id==="answer2") {
+        //     questionTwo();
+        // } 
+
 })      
 }
 
@@ -72,7 +79,7 @@ var questionTwo = function() {
     var secondAnswerD = false;
     
 
-    document.getElementById("questioncontent").innerHTML = firstQuestion;
+    document.getElementById("questioncontent").innerHTML = secondQuestion;
     document.getElementById("answer1").innerHTML = "test";
     document.getElementById("answer2").innerHTML = "test";
     document.getElementById("answer3").innerHTML = "test";
