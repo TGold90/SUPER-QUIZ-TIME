@@ -40,16 +40,15 @@ li {
 }
 
 #quizbox {
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 3%;
+    margin-left: 10%;
     text-align: center;
     border: 3px rgb(0, 255, 34) dotted;
-    width: 70%;
+    width: 80%;
 }
 
 .buttonBox {
-    text-align: start;
+    display: grid;
+    grid-template-columns: 2fr, auto;
 }
 
 #questioncontent {
@@ -63,7 +62,7 @@ li {
 }
 
 .questions {
-    flex-direction: column;
+    display: grid;
 }
 
 #startbtn {
