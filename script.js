@@ -5,19 +5,19 @@
 //timer=0 or all questions answered --> game is over
 //input for initials and final score shown. can be saved.
 
-//Credits: borrowed my question array idea from Web Dev Simplified youtube channel.
+//Credits: got some of my iteration ideas from hamdan on stackoverflow
 
 
     
-var startBtn = document.querySelector("#startbtn");
-var timerElement = document.querySelector("#timer");
+var startBtn = document.querySelector("#startbtn"); //start button
+var timerElement = document.querySelector("#timer"); //timer content
 // var quizBox = document.querySelector("#quizBox");
-var answerSelect = document.querySelector(".answerbtn");
-var answerOne = document.querySelector(".answer1");
-var answerTwo = document.querySelector(".answer2");
-var answerThree = document.querySelector(".answer3");
-var answerFour = document.querySelector(".answer4");
-var questionContent = document.querySelector("#questioncontent");
+var answerSelect = document.querySelector(".answerbtn"); //all answer buttons - click event
+var answerOne = document.querySelector(".answer1");//indiv answer buttons
+var answerTwo = document.querySelector(".answer2");//indiv answer buttons
+var answerThree = document.querySelector(".answer3");//indiv answer buttons
+var answerFour = document.querySelector(".answer4");//indiv answer buttons
+var questionContent = document.querySelector("#questioncontent");//p tag - should display the actual question
 // var gameOver = document.querySelector("#gameover");
 // var resetBtn = document.querySelector()
 var timer;
@@ -33,7 +33,7 @@ startBtn.style.display = "none";
     if (timeLeft > 0) {
         timerElement.textContent = 'Timer:' + timeLeft;
         timeLeft--
- }  else if (timeLeft === 0){
+ }  if (timeLeft === 0){
     clearInterval(timer);
   }    
  }, 1000);
@@ -42,7 +42,7 @@ startBtn.style.display = "none";
 })
 
 //array of questions and answer info
- var questions = [
+ var questionSequence = [
      {question: 'What does HTML stand for?',
         answerOne: "Hyper Tube Markup Language",
         answerTwo: "Hyper Text Markup Language",
@@ -61,17 +61,17 @@ startBtn.style.display = "none";
         answerThree: "wrong",
         answerFour: "wrong",
  },
-     {question: 'question',
-        answerOne: "Hyper Tube Markup Language",
-        answerTwo: "Hyper Text Markup Language",
-        answerThree: "Hypno-Tron Meerkat Lounge",
-        answerFour: "Hold That Milk Log",
+     {question: 'questionQuestion 4',
+        answerOne: "1d",
+        answerTwo: "2d",
+        answerThree: "3d",
+        answerFour: "4d",
  },
-     {question: 'questions',
-        answerOne: "Hyper Tube Markup Language",
-        answerTwo: "Hyper Text Markup Language",
-        answerThree: "Hypno-Tron Meerkat Lounge",
-        answerFour: "Hold That Milk Log",
+     {question: 'questions the fifth one',
+        answerOne: "an answer on ! 5",
+        answerTwo: "5b",
+        answerThree: "5c",
+        answerFour: "5d",
  }
 ]
 
@@ -86,21 +86,30 @@ startBtn.style.display = "none";
 
 //invoke by start btn. should display question and answer
 function currentQuestion(){
-    let i=0;
-    document.getElementById("questioncontent").innerHTML = questions[i].question;
-    document.getElementById("answer1").innerHTML = questions[i].answerOne;
-    document.getElementById("answer2").innerHTML = questions[i].answerTwo;
-    document.getElementById("answer3").innerHTML = questions[i].answerThree;
-    document.getElementById("answer4").innerHTML = questions[i].answerFour;
+    let i = 0;
+    document.getElementById("questioncontent").innerHTML = questionSequence[i].question; //get/display question content current index
+    document.getElementById("answer1").innerHTML = questionSequence[i].answerOne;
+    document.getElementById("answer2").innerHTML = questionSequence[i].answerTwo;
+    document.getElementById("answer3").innerHTML = questionSequence[i].answerThree;
+    document.getElementById("answer4").innerHTML = questionSequence[i].answerFour;
 
+    //currently only working for first button 
     answerSelect.addEventListener("click",()=> {
-    i++
-
-});
+        i++
+        document.getElementById("questioncontent").innerHTML = questionSequence[i].question; //get/display question content current index
+        document.getElementById("answer1").innerHTML = questionSequence[i].answerOne;
+        document.getElementById("answer2").innerHTML = questionSequence[i].answerTwo;
+        document.getElementById("answer3").innerHTML = questionSequence[i].answerThree;
+        document.getElementById("answer4").innerHTML = questionSequence[i].answerFour;
+    });
+    //need something for when i > questions.length
 }
 
 function selectAnswer(event) {
-
+    answerSelect.addEventListener("click",()=> {
+        i++
+    
+    });
 }
 
 
