@@ -44,11 +44,13 @@ li {
     text-align: center;
     border: 3px rgb(0, 255, 34) dotted;
     width: 80%;
+    padding-bottom: 25px;
 }
 
-.buttonBox {
+.buttonbox {
     display: grid;
-    grid-template-columns: 2fr, auto;
+    grid-template-columns: repeat(2, auto);
+    margin: 15px;
 }
 
 #questioncontent {
@@ -71,4 +73,12 @@ li {
 
 .answerBtn {
     flex-direction: column;
+}
+
+.choice {
+    padding:15px;
+    margin: 5px 0px 0px 15px;
+    gap:15px;
+    color: darkslateblue;
+    font-family: 'Courier New', Courier, monospace;;
 }

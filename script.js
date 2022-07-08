@@ -35,8 +35,9 @@ startBtn.style.display = "none";
         timeLeft--
  }  else if (timeLeft === 0){
      timeLeft = 0;
-     timerElement.textContent = 'OUT OF TIME';
+     timerElement.textContent = 'GAME OVER';
     clearInterval(timer);
+    //run end of game function
   }    
  }, 1000);
  
@@ -92,7 +93,7 @@ function clickQuestion() {
     }
     currentQuestionInd++
     if (currentQuestionInd === questionSequence.length){
-        alert("You've run out of questions")  //this will actually be a end of game function.
+        alert("You've run out of questions")//this will actually be a end of game function.
     } else {
         currentQuestion();
     }
