@@ -50,33 +50,33 @@ startBtn.style.display = "none";
         "Hold That Milk Log"], 
         answer: "Hyper Text Markup Language"
  },
-     {question: 'Which language is used primarily as styling for a webpage?',
-     options:["Hyper Tube Markup Language", 
-     "Hyper Text Markup Language",
-     "Hypno-Tron Meerkat Lounge",
-     "Hold That Milk Log"], 
-     answer:"Hold That Milk Log"
+     {question: 'Which language is used primarily as styling for the content of a webpage?',
+     options:["Javscript", 
+     "HTML",
+     "CSS",
+     "Russian"], 
+     answer:"CSS"
  },
-     {question: 'Which of the following would be considered an \'array method\'?',
-     options:["Hyper Tube Markup Language", 
-     "Hyper Text Markup Language",
-     "Hypno-Tron Meerkat Lounge",
-     "Hold That Milk Log"], 
-     answer:"Hold That Milk Log"
+     {question: 'Which of the following is not a javascript variable data-type?',
+     options:["Boolean", 
+     "Number",
+     "String",
+     "Iterative"], 
+     answer:"Iterative"
  },
-     {question: 'questionQuestion 4',
-     options:["Hyper Tube Markup Language", 
-     "Hyper Text Markup Language",
-     "4c",
-     "test"], 
-     answer:"Hold That Milk Log"
+     {question: 'Between which pair of characters should the code block of a functino be typed?',
+     options:["( )", 
+     "{ }",
+     "[ ]",
+     "< >"], 
+     answer:"{ }"
  },
-     {question: 'questions the fifth one',
-     options:["Hyper Tube Markup Language", 
-     "Hyper Text Markup Language",
-     "Hypno-Tron Meerkat Lounge",
-     "Hold That Milk Log"], 
-     answer:"Hold That Milk Log"
+     {question: 'What is the scope of a variable that is declared within a function?',
+     options:["Global", 
+     "Small",
+     "Tribal",
+     "Local"], 
+     answer:"Local"
  }
 ]
 
@@ -103,12 +103,7 @@ function currentQuestion(){
     var currentQuestion = questionSequence[currentQuestionInd];
     questionContent.textContent = currentQuestion.question;
     answerSelect.innerHTML = "";
-    // let i = 0;
-    // document.getElementById("questioncontent").innerHTML = questionSequence[currentQuestionInd].question; //get/display question content current index
-    // document.getElementById("answer1").innerHTML = questionSequence[currentQuestionInd].answerOne;
-    // document.getElementById("answer2").innerHTML = questionSequence[currentQuestionInd].answerTwo;
-    // document.getElementById("answer3").innerHTML = questionSequence[currentQuestionInd].answerThree;
-    // document.getElementById("answer4").innerHTML = questionSequence[currentQuestionInd].answerFour;
+    
     currentQuestion.options.forEach(function(choice, i) {
         var choiceNode = document.createElement("button");
         choiceNode.setAttribute("class", "choice")
@@ -122,57 +117,4 @@ function currentQuestion(){
     //currently only working for first button 
     // answerSelect.onclick = clickQuestion
     console.log(answerSelect);
-        
-        // if ()
-        // document.getElementById("questioncontent").innerHTML = questionSequence[currentQuestionInd].question; //displays question/answer content of next index
-        // document.getElementById("answer1").innerHTML = questionSequence[currentQuestionInd].answerOne;
-        // document.getElementById("answer2").innerHTML = questionSequence[currentQuestionInd].answerTwo;
-        // document.getElementById("answer3").innerHTML = questionSequence[currentQuestionInd].answerThree;
-        // document.getElementById("answer4").innerHTML = questionSequence[currentQuestionInd].answerFour;
-    //need something for when i > questions.length
 }
-
-// function selectAnswer(event) {
-//     answerSelect.addEventListener("click",()=> {
-//         i++
-    
-//     });
-// }
-
-
-
-
-
-//timer function invokes first question
-// var questionOne = function() {
-//     var currentQuestion = "What does HTML stand for?";
-//     var firstAnswerA = false;
-//     var firstAnswerB = true;
-//     var firstAnswerC = false;
-//     var firstAnswerD = false;
-
-//     document.getElementById("questioncontent").innerHTML = firstQuestion;
-//     document.getElementById("answer1").innerHTML = "Hyper Tube Markup Language";
-//     document.getElementById("answer2").innerHTML = "Hyper Text Markup Language";
-//     document.getElementById("answer3").innerHTML = "Hypno-Tron Meerkat Lounge";
-//     document.getElementById("answer4").innerHTML = "Hold That Milk Log";
-
-//     answerSelect.addEventListener("click", function(event) {
-//         // if (answerSelect = true) {
-//         //     questionTwo();
-//         // } else if (answerSelect = false) {
-//         //     timeLeft--
-//         //     console.log(timeLeft);
-//         // }
-        
-//         if (event.target.id==="answer1" || event.target.id==="answer3" || event.target.id==="answer4") {
-//             timeLeft--;
-//             document.getElementById("decrement").innerHTML = '-1 second!'; //need to add functinoality to make the message disappear
-//             console.log(timeLeft);
-//         }  else if (timeLeft === 0){
-//         } else if (event.target.id==="answer2") {
-//             questionTwo();
-//         } 
-
-// })      
-// }
