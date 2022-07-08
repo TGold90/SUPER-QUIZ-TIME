@@ -33,7 +33,9 @@ startBtn.style.display = "none";
     if (timeLeft > 0) {
         timerElement.textContent = 'Timer:' + timeLeft;
         timeLeft--
- }  if (timeLeft === 0){
+ }  else if (timeLeft === 0){
+     timeLeft = 0;
+     timerElement.textContent = 'OUT OF TIME';
     clearInterval(timer);
   }    
  }, 1000);
