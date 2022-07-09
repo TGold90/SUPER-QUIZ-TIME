@@ -13,6 +13,7 @@ var startBtn = document.querySelector("#startbtn"); //start button
 var timerElement = document.querySelector("#timer"); //timer content
 // var quizBox = document.querySelector("#quizBox");
 var answerSelect = document.querySelector(".buttonbox"); //all answer buttons - click event
+var decrement = document.querySelector("#decrement");
 // var answerOne = document.querySelector(".answer1");//indiv answer buttons
 // var answerTwo = document.querySelector(".answer2");//indiv answer buttons
 // var answerThree = document.querySelector(".answer3");//indiv answer buttons
@@ -21,13 +22,13 @@ var questionContent = document.querySelector("#questioncontent");//p tag - shoul
 // var gameOver = document.querySelector("#gameover");
 // var resetBtn = document.querySelector()
 var timer;
-var timeLeft = 60;
+var timeLeft = 45; //it seemed more fun with a crazy timer number that counts fast
 var currentQuestionInd = 0;
 
 //function that will run when time runs out or all questions are answered
 // function endOfQuiz () {
 // } 
-startBtn.addEventListener("click", function(event) { //starts timer and then timer button should be hidden
+startBtn.addEventListener("click", function() { //starts timer and then timer button should be hidden
 startBtn.style.display = "none";
  timer = setInterval(function() {
     if (timeLeft > 0) {
@@ -37,9 +38,10 @@ startBtn.style.display = "none";
      timeLeft = 0;
      timerElement.textContent = 'GAME OVER';
     clearInterval(timer);
+    endOfGame();
     //run end of game function
   }    
- }, 1000);
+ }, 1000); //set interval to 1 millisecond because its fun
  
  currentQuestion();
 })
@@ -88,17 +90,34 @@ startBtn.style.display = "none";
 function clickQuestion() {
     //check if its wrong
     if (this.value !== questionSequence[currentQuestionInd].answer) {
-    timeLeft -= 5
-    console.log("you got it wrong")
+    timeLeft -= 7;
+    timerElement.textContent = "Timer:" + timeLeft + "    -7 seconds!"
+    // timerElement.textContent = timeLeft + "-666";
     }
     currentQuestionInd++
     if (currentQuestionInd === questionSequence.length){
-        alert("You've run out of questions")//this will actually be a end of game function.
+        //this will actually be a end of game function.
+        clearInterval(timer);
+        endOfGame();
+        timerElement.textContent = 'GAME OVER';
     } else {
         currentQuestion();
     }
 }
 
+function endOfGame(){
+    answerSelect.innerHTML = "Score: " + timeLeft;
+    questionContent.textContent = "You've Reached the end of the game!";
+    // var highscoreForm = document.createElement("form");
+    // var highscoreInput = document.createElement("input");
+    // highscoreForm.setAttribute("class", "scoreform");
+    // highscoreForm.setAttribute("style", "")
+    // answerSelect.appendChild(highscoreInput);
+    // highscoreForm.appendChild(highscoreInput);
+    // highscoreForm.addEventListener("submit");
+
+    
+}
 // answerSelect.onclick = clickQuestion
 
 //invoke by start btn. should display question and answer
@@ -113,11 +132,10 @@ function currentQuestion(){
         choiceNode.setAttribute("value", choice);
         choiceNode.textContent = i + 1 + "." + choice;
         choiceNode.onclick = clickQuestion;
-        answerSelect.appendChild(choiceNode)
+        answerSelect.appendChild(choiceNode);
         
     });
 
-    //currently only working for first button 
     // answerSelect.onclick = clickQuestion
     console.log(answerSelect);
 }

@@ -1,4 +1,4 @@
-html {
+* {
     box-sizing: border-box;
 }
 
@@ -26,12 +26,12 @@ button {
     box-shadow: inset;
 }
 
-li {
+/* li {
     margin: 5px;
-}
+} */
 
 #timer {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 #SQT {
@@ -42,7 +42,7 @@ li {
 #quizbox {
     margin-left: 10%;
     text-align: center;
-    border: 3px rgb(0, 255, 34) dotted;
+    border: 3px rgb(0, 255, 34) dashed;
     width: 80%;
     padding-bottom: 25px;
 }
@@ -57,11 +57,7 @@ li {
     font-weight: bold;
 }
 
-#answerList {
-    
-    text-align: start;
-    list-style: none;
-}
+
 
 .questions {
     display: grid;
@@ -80,5 +76,6 @@ li {
     margin: 5px 0px 0px 15px;
     gap:15px;
     color: darkslateblue;
-    font-family: 'Courier New', Courier, monospace;;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
 }
