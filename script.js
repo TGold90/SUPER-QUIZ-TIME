@@ -14,20 +14,14 @@ var timerElement = document.querySelector("#timer"); //timer content
 // var quizBox = document.querySelector("#quizBox");
 var answerSelect = document.querySelector(".buttonbox"); //all answer buttons - click event
 var decrement = document.querySelector("#decrement");
-// var answerOne = document.querySelector(".answer1");//indiv answer buttons
-// var answerTwo = document.querySelector(".answer2");//indiv answer buttons
-// var answerThree = document.querySelector(".answer3");//indiv answer buttons
-// var answerFour = document.querySelector(".answer4");//indiv answer buttons
 var questionContent = document.querySelector("#questioncontent");//p tag - should display the actual question
-// var gameOver = document.querySelector("#gameover");
+
 // var resetBtn = document.querySelector()
 var timer;
-var timeLeft = 45; //it seemed more fun with a crazy timer number that counts fast
+var timeLeft = 45;
 var currentQuestionInd = 0;
 
-//function that will run when time runs out or all questions are answered
-// function endOfQuiz () {
-// } 
+
 startBtn.addEventListener("click", function() { //starts timer and then timer button should be hidden
 startBtn.style.display = "none";
  timer = setInterval(function() {
@@ -41,7 +35,7 @@ startBtn.style.display = "none";
     endOfGame();
     //run end of game function
   }    
- }, 1000); //set interval to 1 millisecond because its fun
+ }, 1000); 
  
  currentQuestion();
 })
@@ -108,14 +102,16 @@ function clickQuestion() {
 function endOfGame(){
     answerSelect.innerHTML = "Score: " + timeLeft;
     questionContent.textContent = "You've Reached the end of the game!";
-    // var highscoreForm = document.createElement("form");
-    // var highscoreInput = document.createElement("input");
-    // highscoreForm.setAttribute("class", "scoreform");
-    // highscoreForm.setAttribute("style", "")
-    // answerSelect.appendChild(highscoreInput);
-    // highscoreForm.appendChild(highscoreInput);
-    // highscoreForm.addEventListener("submit");
-
+    var highscoreForm = document.createElement("form");
+    var highscoreInput = document.createElement("input");
+    var inputLabel = document.createElement("label");
+    highscoreForm.setAttribute("class", "scoreForm");
+    highscoreInput.setAttribute("class", "scoreinput");
+    highscoreInput.setAttribute("style", "")
+    inputLabel.textContent = "Enter Initials: ";
+    answerSelect.appendChild(highscoreForm);
+    highscoreForm.appendChild(inputLabel);
+    highscoreForm.appendChild(highscoreInput);
     
 }
 // answerSelect.onclick = clickQuestion
@@ -139,3 +135,14 @@ function currentQuestion(){
     // answerSelect.onclick = clickQuestion
     console.log(answerSelect);
 }
+
+
+// function saveScore() {
+//     // Save related form data as an object
+//     var highScore = {
+//       initials: initials.value,
+//       score: score.value,
+//     };
+//     // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+//     localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+//   }

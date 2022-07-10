@@ -79,3 +79,13 @@ button {
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
 }
+
+.highscores {
+    margin-top: 30px;
+    margin-left: 10%;
+    text-align: center;
+    border: 3px rgb(0, 255, 34) dashed;
+    width: 80%;
+    padding-bottom: 25px;
+    font-weight: bold;
+}
