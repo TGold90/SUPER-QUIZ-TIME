@@ -151,12 +151,25 @@ function showScores() {
   
       scoreList.appendChild(scoreLi);
     }
+}
+
+function openPage() { 
+    // Get stored todos from localStorage
+    var storedScores = JSON.parse(localStorage.getItem("scores"));
+  
+    // If todos were retrieved from localStorage, update the todos array to it
+    if (storedScores !== null) {
+      scores = storedScores;
+    }
+  
+    // This is a helper function that will render todos to the DOM
+    showScores();
   }
 
 function storeScores() {
     // Stringify and set key in localStorage to todos array
     localStorage.setItem("scores", JSON.stringify(scores));
-  }
+}
 // answerSelect.onclick = clickQuestion
 
 //invoke by start btn. should display question and answer
@@ -183,14 +196,4 @@ function getScores(){
 
 };
 
-
-
-// function saveScore() {
-//     // Save related form data as an object
-//     var highScore = {
-//       initials: initials.value,
-//       score: score.value,
-//     };
-//     // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
-//     localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
-//   }
+openPage();
