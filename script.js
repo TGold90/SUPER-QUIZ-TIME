@@ -15,11 +15,14 @@ var timerElement = document.querySelector("#timer"); //timer content
 var answerSelect = document.querySelector(".buttonbox"); //all answer buttons - click event
 var decrement = document.querySelector("#decrement");
 var questionContent = document.querySelector("#questioncontent");//p tag - should display the actual question
+var scoreList = document.querySelector(".highscoreList");
 
 // var resetBtn = document.querySelector()
 var timer;
 var timeLeft = 45;
 var currentQuestionInd = 0;
+
+var scores = [];
 
 
 startBtn.addEventListener("click", function() { //starts timer and then timer button should be hidden
@@ -107,13 +110,53 @@ function endOfGame(){
     var inputLabel = document.createElement("label");
     highscoreForm.setAttribute("class", "scoreForm");
     highscoreInput.setAttribute("class", "scoreinput");
-    highscoreInput.setAttribute("style", "")
     inputLabel.textContent = "Enter Initials: ";
     answerSelect.appendChild(highscoreForm);
     highscoreForm.appendChild(inputLabel);
     highscoreForm.appendChild(highscoreInput);
-    
+
+    highscoreForm.addEventListener("submit", function(event) { //this function is basically borrowed exactly from activity 26 in module 4
+        event.preventDefault();
+      
+        var scoreText = highscoreInput.value.trim();
+
+        if (scoreText === "") {
+            return;
+          }
+
+        scores.push(scoreText + ": " + timeLeft);
+        highscoreInput.value = "";
+        //here there should be a function to save to local storage
+        //then reset webpage
+        //at webpage init the scores will be grabbed from local storage
+        // highscoreInput.value = "";
+        
+          // Store updated todos in localStorage, re-render the list
+        storeScores();
+        showScores();
+    });
 }
+
+function showScores() {
+    // Clear todoList element and update todoCountSpan
+    scoreList.innerHTML = "";
+  
+    // Render a new li for each todo
+    for (var i = 0; i < scores.length; i++) {
+      var score = scores[i];
+  
+      var scoreLi = document.createElement("li");
+      scoreLi.textContent = score;
+      scoreLi.setAttribute("data-index", i);
+  
+      scoreList.appendChild(scoreLi);
+    }
+  }
+
+function storeScores() {
+    // Stringify and set key in localStorage to todos array
+    localStorage.setItem("scores", JSON.stringify(scores));
+  }
 // answerSelect.onclick = clickQuestion
 
 //invoke by start btn. should display question and answer
@@ -135,6 +178,11 @@ function currentQuestion(){
     // answerSelect.onclick = clickQuestion
     console.log(answerSelect);
 }
+
+function getScores(){
+
+};
+
 
 
 // function saveScore() {
