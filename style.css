@@ -55,6 +55,7 @@ button {
 
 #questioncontent {
     font-weight: bold;
+    padding: 0px 75px 0px 75px;
 }
 
 
@@ -80,7 +81,19 @@ button {
     border-radius: 5px;
 }
 
+#hsbtndiv {
+    display: flex;
+    justify-content: center;
+}
+
+#HSbutton {
+    margin-top: 20px;
+    width: 105px;
+    align-items: center;
+}
+
 .highscores {
+    display: none;
     margin-top: 30px;
     margin-left: 10%;
     text-align: center;
@@ -88,4 +101,9 @@ button {
     width: 80%;
     padding-bottom: 25px;
     font-weight: bold;
+}
+
+.highscoreList {
+    text-align: left;
+    list-style: none;
 }

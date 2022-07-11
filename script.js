@@ -16,6 +16,8 @@ var answerSelect = document.querySelector(".buttonbox"); //all answer buttons - 
 var decrement = document.querySelector("#decrement");
 var questionContent = document.querySelector("#questioncontent");//p tag - should display the actual question
 var scoreList = document.querySelector(".highscoreList");
+var highscoreBox = document.querySelector(".highscores")
+var highscoreBtn = document.querySelector("#HSbutton");
 
 // var resetBtn = document.querySelector()
 var timer;
@@ -197,3 +199,10 @@ function getScores(){
 };
 
 openPage();
+
+highscoreBtn.addEventListener("mouseover", function() {
+ highscoreBox.style.display = "block";
+ highscoreBtn.addEventListener("mouseleave", function(){
+     highscoreBox.style.display = "none";
+ })
+});
