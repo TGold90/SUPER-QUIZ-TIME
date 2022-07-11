@@ -79,6 +79,7 @@ button {
     color: darkslateblue;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 #hsbtndiv {
