@@ -22,3 +22,7 @@ The purpose of the site is to play a fun quiz game that tests basic coding knowl
 
 ## Link and Screenshot
 
+Link to deployed Application:
+
+Screenshot:
+![127 0 0 1_5500_index html](https://user-images.githubusercontent.com/104692375/178380564-b339f78a-d2a4-4a80-9b09-b24c9c9bf198.png)
